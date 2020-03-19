@@ -16,5 +16,5 @@ def loadModulesAndCalculateTotalFuelRequirements(filename):
             fuelCount += totalFuelRequiredForModule(int(mass.rstrip()))
     return fuelCount
 
-totalFuelRequired = loadModulesAndCalculateTotalFuelRequirements('day_1/mass_specs_for_modules')
+totalFuelRequired = loadModulesAndCalculateTotalFuelRequirements('./mass_specs_for_modules')
 print("Total fuel required for the mass of the modules: " + str(totalFuelRequired))
