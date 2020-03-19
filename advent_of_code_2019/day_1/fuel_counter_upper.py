@@ -10,11 +10,11 @@ def totalFuelRequiredForModule(mass):
     return fuelRequired + totalFuelRequiredForModule(fuelRequired)
 
 def loadModulesAndCalculateTotalFuelRequirements(filename):
-    fuelCounts = []
+    fuelCount = 0
     with open(filename) as inputFile:
         for mass in inputFile:
-            fuelCounts.append(totalFuelRequiredForModule(int(mass.rstrip())))
-    return sum(fuelCounts)
+            fuelCount += totalFuelRequiredForModule(int(mass.rstrip()))
+    return fuelCount
 
 totalFuelRequired = loadModulesAndCalculateTotalFuelRequirements('mass_specs_for_modules')
 print("Total fuel required for the mass of the modules: " + str(totalFuelRequired))
