@@ -9,23 +9,25 @@ def followPath(currentPosition, direction):
 
 
 def buildWirePath(startingPosition, moves):
-    path = []
+    path = set()
     currentPosition = startingPosition
     for move in moves:
         direction, distance = move[0], int(move[1:])
         while distance > 0:
             currentPosition = followPath(currentPosition, direction)
-            path.append(currentPosition)
+            path.add(tuple(currentPosition))
             distance -= 1
 
     return path
 
 
 def findIntersections(pathA, pathB):
-    return [x for x in pathA if x in pathB]
+    print("finding intersections")
+    return pathA.intersection(pathB)
 
 
 def findManhattanDistances(intersectionPoints):
+    print("finding distances")
     return [sum([abs(x), abs(y)]) for [x, y] in intersectionPoints]
 
 
