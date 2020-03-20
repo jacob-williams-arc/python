@@ -22,12 +22,10 @@ def buildWirePath(startingPosition, moves):
 
 
 def findIntersections(pathA, pathB):
-    print("finding intersections")
     return pathA.intersection(pathB)
 
 
 def findManhattanDistances(intersectionPoints):
-    print("finding distances")
     return [sum([abs(x), abs(y)]) for [x, y] in intersectionPoints]
 
 
