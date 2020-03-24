@@ -1,5 +1,6 @@
 from itertools import groupby
 
+
 def validLengthRequirement(candidate):
     return len(candidate) == 6
 
@@ -17,7 +18,7 @@ def validAdjacentRequirementModified(candidate):
     for digit in range(len(digitCounts)):
         if len(digitCounts[digit]) == 2:
             return True
-        
+
     return False
 
 
@@ -33,14 +34,14 @@ def validNumericPatternRequirement(candidate):
 
 def isValidPasswordPart1(candidate):
     return (validLengthRequirement(candidate)
-        and validAdjacentRequirement(candidate)
-        and validNumericPatternRequirement(candidate))
+            and validAdjacentRequirement(candidate)
+            and validNumericPatternRequirement(candidate))
 
 
 def isValidPasswordPart2(candidate):
     return (validLengthRequirement(candidate)
-        and validAdjacentRequirementModified(candidate)
-        and validNumericPatternRequirement(candidate))
+            and validAdjacentRequirementModified(candidate)
+            and validNumericPatternRequirement(candidate))
 
 
 validity = []

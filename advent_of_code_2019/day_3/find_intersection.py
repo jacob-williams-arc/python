@@ -38,7 +38,8 @@ def findMinimumDistanceForWireIntersection(centralPort, wirePathA, wirePathB):
 def findMinimumDistanceToIntersectionPoints(pathA, pathB):
     intersectionPoints = findIntersections(pathA, pathB)
 
-    return min([(pathA.index(x) + 1) + (pathB.index(x) + 1) for x in intersectionPoints])
+    return min([(pathA.index(x) + 1)
+                + (pathB.index(x) + 1) for x in intersectionPoints])
 
 
 def loadData(filename):
